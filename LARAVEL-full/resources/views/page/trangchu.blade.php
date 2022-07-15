@@ -114,9 +114,9 @@
                     </p>
                   </div>
                   <div class="single-item-caption">
-                    <a class="add-to-cart pull-left" href=""><i
+                   
+                        <a class="add-to-cart pull-left" href="{{route('themgiohang',$new->id)}}"><i
                         class="fa fa-shopping-cart"></i></a>
-
                     <a class="add-to-wishlist" href="wishlist/add/{{$new->id}}"><i class="fa fa-heart"></i></a>
 
                     <a class="beta-btn primary" href="detail/{{$km->id}}">Details <i

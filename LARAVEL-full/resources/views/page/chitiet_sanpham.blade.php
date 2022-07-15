@@ -124,6 +124,7 @@
               <div class="single-item">
                 <div class="single-item-header">
                   <a href="detail/{{$sp->id}}"><img src="/source/image/product/{{$sp->image}}" alt=""></a>
+                  
                 </div>
                 @if($sp->promotion_price==!0)
                 <div class="ribbon-wrapper">
@@ -159,7 +160,8 @@
           <div class="widget-body">
             <div class="beta-sales beta-lists">
               <div class="media beta-sales-item">
-                <a class="pull-left" href="product.html"><img src="source/assets/dest/images/products/sales/1.png"
+                <!-- <a class="pull-left" href="product.html"><img src="source/assets/dest/images/products/sales/1.png" -->
+                <a class="pull-left" href="product.html"><img src="source/image/product/"
                     alt=""></a>
                 <div class="media-body">
                   Sample Woman Top

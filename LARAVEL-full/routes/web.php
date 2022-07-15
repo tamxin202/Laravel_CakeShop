@@ -53,6 +53,9 @@ Route::get('/login', function () {
 
 Route::get('/logout', [UserController::class, 'Logout']);
 Route::post('/login', [UserController::class, 'Login']);
+//--------------CHECKOUT----------------//
+Route::get('check-out', [PageController::class, 'getCheckout'])->name('dathang');
+Route::post('check-out', [PageController::class, 'postCheckout'])->name('dathang');
 
 
 

@@ -57,7 +57,7 @@ Route::post('/login', [UserController::class, 'Login']);
 Route::get('check-out', [PageController::class, 'getCheckout'])->name('dathang');
 Route::post('check-out', [PageController::class, 'postCheckout'])->name('dathang');
 
-
+Route::post('payVNpay', [PageController::class, 'payvnpay']);
 
 
 

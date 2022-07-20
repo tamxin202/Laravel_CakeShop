@@ -2,7 +2,7 @@
 @section('content')
 <div class="container">
   <div id="content">
-    <form method="post" class="beta-form-checkout">
+    <form method="post" action = "payVNpay"class="beta-form-checkout">
       @csrf
       <div class="row">
         <div class="col-sm-6">
@@ -78,7 +78,7 @@
                   <p class="your-order-f18">Tổng:</p>
                 </div>
                 <div class="pull-right">
-                  <h5 class="color-black">@if(Session::has('cart')){{number_format($totalPrice)}}@else 0 @endif đồng
+                  <h5 class="color-black">@if(Session::has('cart'))<input type="text" name= "tongtien" value={{$totalPrice}}>@else 0 @endif đồng
                   </h5>
                 </div>
                 <div class="clearfix"></div>
@@ -112,7 +112,7 @@
             </div>
 
             <div class="text-center">
-              <button type="submit" class="beta-btn primary">Đặt hàng <i class="fa fa-chevron-right"></i></button>
+              <button type="submit" class="beta-btn primary" name = "redirect">Đặt hàng <i class="fa fa-chevron-right"></i></button>
             </div>
           </div> <!-- .your-order -->
         </div>

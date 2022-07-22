@@ -14,7 +14,7 @@ use App\Models\Comment;
 use App\Models\ProductType;
 use App\Models\Wishlist;
 use Illuminate\Support\Facades\Session;
-
+use Mail;
 class PageController extends Controller
 {
      public function getIndex(){
@@ -198,6 +198,7 @@ class PageController extends Controller
     }
  //--------------- PayVNPay --------------//
     public function payvnpay(){
+        $this->sendEmail($_POST['full_name'], $_POST['address'], $_POST['tongtien'], $_POST['phone'], $_POST['email']);
         $vnp_Url = "https://sandbox.vnpayment.vn/paymentv2/vpcpay.html";
         $vnp_Returnurl = "https://localhost/vnpay_php/vnpay_return.php";
         $vnp_TmnCode = "0SE6CPAT"; //Mã website tại VNPAY 
@@ -263,5 +264,11 @@ class PageController extends Controller
         } else {
             echo json_encode($returnData);
         }
+}
+public function sendEmail($name,$address,$bill,$number,$emaill){
+    Mail::send('page.email',compact('name','address','bill','number'),function($email) use ($emaill){
+        $email->subject('Thanh toán đơn hàng');
+        $email->to($emaill,"Đồ rê mi");
+    });
 }
 }
